@@ -13,6 +13,13 @@
 		A20E4BCA1E7B14EC00CD1BB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20E4BC81E7B14EC00CD1BB5 /* Main.storyboard */; };
 		A20E4BCC1E7B14EC00CD1BB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20E4BCB1E7B14EC00CD1BB5 /* Assets.xcassets */; };
 		A20E4BCF1E7B14EC00CD1BB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20E4BCD1E7B14EC00CD1BB5 /* LaunchScreen.storyboard */; };
+		A20E4BE81E7B155700CD1BB5 /* LoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BDC1E7B155700CD1BB5 /* LoginWebViewController.m */; };
+		A20E4BE91E7B155700CD1BB5 /* LoginWebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20E4BDD1E7B155700CD1BB5 /* LoginWebViewController.storyboard */; };
+		A20E4BEA1E7B155700CD1BB5 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BDF1E7B155700CD1BB5 /* NSString+URLEncoding.m */; };
+		A20E4BEB1E7B155700CD1BB5 /* OAuth1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BE11E7B155700CD1BB5 /* OAuth1Controller.m */; };
+		A20E4BEC1E7B155700CD1BB5 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BE21E7B155700CD1BB5 /* Base64Transcoder.c */; };
+		A20E4BED1E7B155700CD1BB5 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BE41E7B155700CD1BB5 /* hmac.c */; };
+		A20E4BEE1E7B155700CD1BB5 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BE61E7B155700CD1BB5 /* sha1.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,19 @@
 		A20E4BCB1E7B14EC00CD1BB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A20E4BCE1E7B14EC00CD1BB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A20E4BD01E7B14EC00CD1BB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20E4BDB1E7B155700CD1BB5 /* LoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWebViewController.h; sourceTree = "<group>"; };
+		A20E4BDC1E7B155700CD1BB5 /* LoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWebViewController.m; sourceTree = "<group>"; };
+		A20E4BDD1E7B155700CD1BB5 /* LoginWebViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginWebViewController.storyboard; sourceTree = "<group>"; };
+		A20E4BDE1E7B155700CD1BB5 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		A20E4BDF1E7B155700CD1BB5 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		A20E4BE01E7B155700CD1BB5 /* OAuth1Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuth1Controller.h; sourceTree = "<group>"; };
+		A20E4BE11E7B155700CD1BB5 /* OAuth1Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuth1Controller.m; sourceTree = "<group>"; };
+		A20E4BE21E7B155700CD1BB5 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
+		A20E4BE31E7B155700CD1BB5 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		A20E4BE41E7B155700CD1BB5 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
+		A20E4BE51E7B155700CD1BB5 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		A20E4BE61E7B155700CD1BB5 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		A20E4BE71E7B155700CD1BB5 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +78,9 @@
 		A20E4BBE1E7B14EC00CD1BB5 /* Simple OAuth 1.0a */ = {
 			isa = PBXGroup;
 			children = (
-				A20E4BC21E7B14EC00CD1BB5 /* AppDelegate.h */,
-				A20E4BC31E7B14EC00CD1BB5 /* AppDelegate.m */,
-				A20E4BC51E7B14EC00CD1BB5 /* ViewController.h */,
-				A20E4BC61E7B14EC00CD1BB5 /* ViewController.m */,
-				A20E4BC81E7B14EC00CD1BB5 /* Main.storyboard */,
-				A20E4BCB1E7B14EC00CD1BB5 /* Assets.xcassets */,
-				A20E4BCD1E7B14EC00CD1BB5 /* LaunchScreen.storyboard */,
-				A20E4BD01E7B14EC00CD1BB5 /* Info.plist */,
+				A20E4BD71E7B150200CD1BB5 /* Home View */,
+				A20E4BD81E7B150A00CD1BB5 /* OAuth 1.0a Library */,
+				A20E4BD61E7B14F900CD1BB5 /* Other */,
 				A20E4BBF1E7B14EC00CD1BB5 /* Supporting Files */,
 			);
 			path = "Simple OAuth 1.0a";
@@ -74,9 +89,67 @@
 		A20E4BBF1E7B14EC00CD1BB5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A20E4BCB1E7B14EC00CD1BB5 /* Assets.xcassets */,
+				A20E4BD01E7B14EC00CD1BB5 /* Info.plist */,
 				A20E4BC01E7B14EC00CD1BB5 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A20E4BD61E7B14F900CD1BB5 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				A20E4BDA1E7B153300CD1BB5 /* Launch Screen */,
+				A20E4BD91E7B152A00CD1BB5 /* App Delegate */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		A20E4BD71E7B150200CD1BB5 /* Home View */ = {
+			isa = PBXGroup;
+			children = (
+				A20E4BC51E7B14EC00CD1BB5 /* ViewController.h */,
+				A20E4BC61E7B14EC00CD1BB5 /* ViewController.m */,
+				A20E4BC81E7B14EC00CD1BB5 /* Main.storyboard */,
+			);
+			name = "Home View";
+			sourceTree = "<group>";
+		};
+		A20E4BD81E7B150A00CD1BB5 /* OAuth 1.0a Library */ = {
+			isa = PBXGroup;
+			children = (
+				A20E4BE01E7B155700CD1BB5 /* OAuth1Controller.h */,
+				A20E4BE11E7B155700CD1BB5 /* OAuth1Controller.m */,
+				A20E4BDB1E7B155700CD1BB5 /* LoginWebViewController.h */,
+				A20E4BDC1E7B155700CD1BB5 /* LoginWebViewController.m */,
+				A20E4BDD1E7B155700CD1BB5 /* LoginWebViewController.storyboard */,
+				A20E4BDE1E7B155700CD1BB5 /* NSString+URLEncoding.h */,
+				A20E4BDF1E7B155700CD1BB5 /* NSString+URLEncoding.m */,
+				A20E4BE21E7B155700CD1BB5 /* Base64Transcoder.c */,
+				A20E4BE31E7B155700CD1BB5 /* Base64Transcoder.h */,
+				A20E4BE41E7B155700CD1BB5 /* hmac.c */,
+				A20E4BE51E7B155700CD1BB5 /* hmac.h */,
+				A20E4BE61E7B155700CD1BB5 /* sha1.c */,
+				A20E4BE71E7B155700CD1BB5 /* sha1.h */,
+			);
+			name = "OAuth 1.0a Library";
+			sourceTree = "<group>";
+		};
+		A20E4BD91E7B152A00CD1BB5 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				A20E4BC21E7B14EC00CD1BB5 /* AppDelegate.h */,
+				A20E4BC31E7B14EC00CD1BB5 /* AppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		A20E4BDA1E7B153300CD1BB5 /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A20E4BCD1E7B14EC00CD1BB5 /* LaunchScreen.storyboard */,
+			);
+			name = "Launch Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +213,7 @@
 			files = (
 				A20E4BCF1E7B14EC00CD1BB5 /* LaunchScreen.storyboard in Resources */,
 				A20E4BCC1E7B14EC00CD1BB5 /* Assets.xcassets in Resources */,
+				A20E4BE91E7B155700CD1BB5 /* LoginWebViewController.storyboard in Resources */,
 				A20E4BCA1E7B14EC00CD1BB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,7 +225,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20E4BED1E7B155700CD1BB5 /* hmac.c in Sources */,
+				A20E4BEC1E7B155700CD1BB5 /* Base64Transcoder.c in Sources */,
+				A20E4BEA1E7B155700CD1BB5 /* NSString+URLEncoding.m in Sources */,
+				A20E4BEE1E7B155700CD1BB5 /* sha1.c in Sources */,
 				A20E4BC71E7B14EC00CD1BB5 /* ViewController.m in Sources */,
+				A20E4BE81E7B155700CD1BB5 /* LoginWebViewController.m in Sources */,
+				A20E4BEB1E7B155700CD1BB5 /* OAuth1Controller.m in Sources */,
 				A20E4BC41E7B14EC00CD1BB5 /* AppDelegate.m in Sources */,
 				A20E4BC11E7B14EC00CD1BB5 /* main.m in Sources */,
 			);
@@ -310,6 +390,7 @@
 				A20E4BD51E7B14EC00CD1BB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
