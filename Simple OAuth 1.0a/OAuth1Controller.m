@@ -236,13 +236,16 @@ static inline NSDictionary *CHParametersFromQueryString(NSString *queryString) {
     // Perform the network request.
     [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        NSString *reponseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        
-        if (error != nil) {
-            NSLog(@"obtainRequestTokenWithCompletion ERROR: %@", error);
-        }
-        
-        completion(nil, CHParametersFromQueryString(reponseString));
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            NSString *reponseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            
+            if (error != nil) {
+                NSLog(@"obtainRequestTokenWithCompletion ERROR: %@", error);
+            }
+            
+            completion(nil, CHParametersFromQueryString(reponseString));
+        });
     }] resume];
 }
 
@@ -349,8 +352,11 @@ static inline NSDictionary *CHParametersFromQueryString(NSString *queryString) {
     // Perform the network request.
     [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        completion(nil, CHParametersFromQueryString(responseString));
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            completion(nil, CHParametersFromQueryString(responseString));
+        });
     }] resume];
 }
 
