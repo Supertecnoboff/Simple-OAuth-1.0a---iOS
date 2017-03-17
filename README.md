@@ -3,7 +3,7 @@ A super simple OAuth 1.0a implementation for iOS.
 
 Note: This is a vary basic implementation/mashup of [TDOAuth](https://github.com/tweetdeck-archive/TDOAuth) and [simple-oauth1](https://github.com/chrhansen/simple-oauth1).
 
-This is an example Xcode project showeing you how to login/authenticate with an OAuth 1.0a services (ie: Twitter).
+This is an example Xcode project showing you how to login/authenticate with an OAuth 1.0a services (ie: Twitter).
 
 **Installation**
 
