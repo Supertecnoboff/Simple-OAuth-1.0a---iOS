@@ -144,16 +144,13 @@ static inline NSDictionary *CHParametersFromQueryString(NSString *queryString) {
 @synthesize pass_consumer_key;
 @synthesize pass_consumer_secret;
 @synthesize pass_auth_url;
+@synthesize pass_api_url;
 @synthesize pass_request_token_url;
 @synthesize pass_authenticate_url;
 @synthesize pass_access_token_url;
 @synthesize pass_oauth_scope_params;
 
 -(void)loginWithWebView:(UIWebView *)webWiew completion:(void (^)(NSDictionary *oauthTokens, NSError *error))completion {
-    
-    NSLog(@"loginWithWebView called.");
-    NSLog(@"TWO");
-    NSLog(@"Is the input data nil? %@\n\n", pass_oauth_callback);
     
     self.webView = webWiew;
     self.webView.delegate = self;
@@ -166,43 +163,39 @@ static inline NSDictionary *CHParametersFromQueryString(NSString *queryString) {
     
     [self obtainRequestTokenWithCompletion:^(NSError *error, NSDictionary *responseParams) {
         
-         NSString *oauth_token_secret = responseParams[@"oauth_token_secret"];
-         NSString *oauth_token = responseParams[@"oauth_token"];
-         if (oauth_token_secret
-             && oauth_token)
-         {
-             [self authenticateToken:oauth_token withCompletion:^(NSError *error, NSDictionary *responseParams)
-              {
-                  if (!error)
-                  {
-                      [self requestAccessToken:oauth_token_secret
-                                    oauthToken:responseParams[@"oauth_token"]
-                                 oauthVerifier:responseParams[@"oauth_verifier"]
-                                    completion:^(NSError *error, NSDictionary *responseParams)
-                       {
-                           completion(responseParams, error);
-                       }];
-                  }
-                  
-                  else {
-                      completion(responseParams, error);
-                  }
-              }];
-         }
-         
-         else {
-             if (!error) error = [NSError errorWithDomain:@"oauth.requestToken" code:0 userInfo:@{@"userInfo" : @"oauth_token and oauth_token_secret were not both returned from request token step"}];
-             completion(responseParams, error);
-         }
-     }];
+        NSString *oauth_token_secret = responseParams[@"oauth_token_secret"];
+        NSString *oauth_token = responseParams[@"oauth_token"];
+        
+        if (oauth_token_secret && oauth_token) {
+            
+            [self authenticateToken:oauth_token withCompletion:^(NSError *error, NSDictionary *responseParams) {
+                
+                if (!error) {
+                    
+                    [self requestAccessToken:oauth_token_secret oauthToken:responseParams[@"oauth_token"] oauthVerifier:responseParams[@"oauth_verifier"] completion:^(NSError *error, NSDictionary *responseParams) {
+                         completion(responseParams, error);
+                     }];
+                }
+                
+                else {
+                    completion(responseParams, error);
+                }
+            }];
+        }
+        
+        else {
+            
+            if (!error) error = [NSError errorWithDomain:@"oauth.requestToken" code:0 userInfo:@{@"userInfo" : @"oauth_token and oauth_token_secret were not both returned from request token step"}];
+            completion(responseParams, error);
+        }
+    }];
 }
 
 #pragma mark - Step 1 Obtaining a request token
 -(void)obtainRequestTokenWithCompletion:(void (^)(NSError *error, NSDictionary *responseParams))completion {
     
-    NSLog(@"ABCD: %@", pass_auth_url);
-    
-    NSString *request_url = [pass_auth_url stringByAppendingString:pass_request_token_url];
+    /*NSString *request_url = [pass_auth_url stringByAppendingString:pass_request_token_url];
+    request_url = [NSString stringWithFormat:@"%@?oauth_callback=%@", request_url, pass_oauth_callback];
     NSString *oauth_consumer_secret = pass_consumer_secret;
     
     NSMutableDictionary *allParameters = [self.class standardOauthParameters:pass_consumer_secret];
@@ -229,16 +222,28 @@ static inline NSDictionary *CHParametersFromQueryString(NSString *queryString) {
     
     NSString *oAuthHeader = [@"OAuth " stringByAppendingFormat:@"%@", [parameterPairs componentsJoinedByString:@", "]];
     [request setValue:oAuthHeader forHTTPHeaderField:@"Authorization"];
+    */
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:pass_oauth_callback forKey:@"oauth_callback"];
+    
+    //init request
+    NSURLRequest *request = [TDOAuth URLRequestForPath:pass_request_token_url GETParameters:dict scheme:@"https" host:pass_api_url consumerKey:pass_consumer_key consumerSecret:pass_consumer_secret accessToken:nil tokenSecret:nil];
     
     // Setup the network request.
     NSURLSession *session = [NSURLSession sharedSession];
     
     // Perform the network request.
-    [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         NSString *reponseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        if (error != nil) {
+            NSLog(@"obtainRequestTokenWithCompletion ERROR: %@", error);
+        }
+        
         completion(nil, CHParametersFromQueryString(reponseString));
-    }];
+    }] resume];
 }
 
 #pragma mark - Step 2 Show login to the user to authorize our app
@@ -342,11 +347,11 @@ static inline NSDictionary *CHParametersFromQueryString(NSString *queryString) {
     NSURLSession *session = [NSURLSession sharedSession];
     
     // Perform the network request.
-    [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         completion(nil, CHParametersFromQueryString(responseString));
-    }];
+    }] resume];
 }
 
 +(NSMutableDictionary *)standardOauthParameters:(NSString *)input_consumer_secret {

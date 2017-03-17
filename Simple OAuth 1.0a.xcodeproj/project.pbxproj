@@ -20,6 +20,10 @@
 		A20E4BEC1E7B155700CD1BB5 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BE21E7B155700CD1BB5 /* Base64Transcoder.c */; };
 		A20E4BED1E7B155700CD1BB5 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BE41E7B155700CD1BB5 /* hmac.c */; };
 		A20E4BEE1E7B155700CD1BB5 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BE61E7B155700CD1BB5 /* sha1.c */; };
+		A20E4BF81E7C004200CD1BB5 /* TDOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BF01E7C004200CD1BB5 /* TDOAuth.m */; };
+		A20E4BF91E7C004200CD1BB5 /* OMGHTTPURLRQ.m in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BF31E7C004200CD1BB5 /* OMGHTTPURLRQ.m */; };
+		A20E4BFA1E7C004200CD1BB5 /* OMGFormURLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BF51E7C004200CD1BB5 /* OMGFormURLEncode.m */; };
+		A20E4BFB1E7C004200CD1BB5 /* OMGUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = A20E4BF71E7C004200CD1BB5 /* OMGUserAgent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,15 @@
 		A20E4BE51E7B155700CD1BB5 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
 		A20E4BE61E7B155700CD1BB5 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
 		A20E4BE71E7B155700CD1BB5 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		A20E4BEF1E7C004200CD1BB5 /* TDOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOAuth.h; sourceTree = "<group>"; };
+		A20E4BF01E7C004200CD1BB5 /* TDOAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOAuth.m; sourceTree = "<group>"; };
+		A20E4BF11E7C004200CD1BB5 /* OMGFormURLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMGFormURLEncode.h; sourceTree = "<group>"; };
+		A20E4BF21E7C004200CD1BB5 /* OMGHTTPURLRQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMGHTTPURLRQ.h; sourceTree = "<group>"; };
+		A20E4BF31E7C004200CD1BB5 /* OMGHTTPURLRQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMGHTTPURLRQ.m; sourceTree = "<group>"; };
+		A20E4BF41E7C004200CD1BB5 /* OMGFormURLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMGFormURLEncode.h; sourceTree = "<group>"; };
+		A20E4BF51E7C004200CD1BB5 /* OMGFormURLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMGFormURLEncode.m; sourceTree = "<group>"; };
+		A20E4BF61E7C004200CD1BB5 /* OMGUserAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMGUserAgent.h; sourceTree = "<group>"; };
+		A20E4BF71E7C004200CD1BB5 /* OMGUserAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMGUserAgent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +91,15 @@
 		A20E4BBE1E7B14EC00CD1BB5 /* Simple OAuth 1.0a */ = {
 			isa = PBXGroup;
 			children = (
+				A20E4BEF1E7C004200CD1BB5 /* TDOAuth.h */,
+				A20E4BF01E7C004200CD1BB5 /* TDOAuth.m */,
+				A20E4BF11E7C004200CD1BB5 /* OMGFormURLEncode.h */,
+				A20E4BF21E7C004200CD1BB5 /* OMGHTTPURLRQ.h */,
+				A20E4BF31E7C004200CD1BB5 /* OMGHTTPURLRQ.m */,
+				A20E4BF41E7C004200CD1BB5 /* OMGFormURLEncode.h */,
+				A20E4BF51E7C004200CD1BB5 /* OMGFormURLEncode.m */,
+				A20E4BF61E7C004200CD1BB5 /* OMGUserAgent.h */,
+				A20E4BF71E7C004200CD1BB5 /* OMGUserAgent.m */,
 				A20E4BD71E7B150200CD1BB5 /* Home View */,
 				A20E4BD81E7B150A00CD1BB5 /* OAuth 1.0a Library */,
 				A20E4BD61E7B14F900CD1BB5 /* Other */,
@@ -228,12 +250,16 @@
 				A20E4BED1E7B155700CD1BB5 /* hmac.c in Sources */,
 				A20E4BEC1E7B155700CD1BB5 /* Base64Transcoder.c in Sources */,
 				A20E4BEA1E7B155700CD1BB5 /* NSString+URLEncoding.m in Sources */,
+				A20E4BF91E7C004200CD1BB5 /* OMGHTTPURLRQ.m in Sources */,
+				A20E4BF81E7C004200CD1BB5 /* TDOAuth.m in Sources */,
+				A20E4BFA1E7C004200CD1BB5 /* OMGFormURLEncode.m in Sources */,
 				A20E4BEE1E7B155700CD1BB5 /* sha1.c in Sources */,
 				A20E4BC71E7B14EC00CD1BB5 /* ViewController.m in Sources */,
 				A20E4BE81E7B155700CD1BB5 /* LoginWebViewController.m in Sources */,
 				A20E4BEB1E7B155700CD1BB5 /* OAuth1Controller.m in Sources */,
 				A20E4BC41E7B14EC00CD1BB5 /* AppDelegate.m in Sources */,
 				A20E4BC11E7B14EC00CD1BB5 /* main.m in Sources */,
+				A20E4BFB1E7C004200CD1BB5 /* OMGUserAgent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

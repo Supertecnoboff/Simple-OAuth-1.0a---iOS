@@ -29,6 +29,7 @@
     self.oauth1Controller.pass_consumer_key = @"YOUR-KEY-HERE";
     self.oauth1Controller.pass_consumer_secret = @"YOUR-SECRET-HERE";
     self.oauth1Controller.pass_auth_url = @"https://api.twitter.com/oauth";
+    self.oauth1Controller.pass_api_url = @"api.twitter.com/oauth";
     self.oauth1Controller.pass_request_token_url = @"/request_token";
     self.oauth1Controller.pass_authenticate_url = @"/authorize";
     self.oauth1Controller.pass_access_token_url = @"/access_token";
@@ -51,7 +52,7 @@
             }
             
             else {
-                NSLog(@"Error authenticating: %@", error.localizedDescription);
+                NSLog(@"Error authenticating: %@", error);
             }
             
             // Now close OAuth 1.0a login view.
@@ -67,6 +68,17 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+/// OAUTH METHODS ///
+
+-(OAuth1Controller *)oauth1Controller {
+    
+    if (_oauth1Controller == nil) {
+        _oauth1Controller = [[OAuth1Controller alloc] init];
+    }
+    
+    return _oauth1Controller;
 }
 
 /// OTHER METHODS ///

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "TDOAuth.h"
 
 @interface OAuth1Controller : NSObject <UIWebViewDelegate> {
     
@@ -16,6 +17,7 @@
     NSString *pass_consumer_key;
     NSString *pass_consumer_secret;
     NSString *pass_auth_url;
+    NSString *pass_api_url;
     NSString *pass_request_token_url;
     NSString *pass_authenticate_url;
     NSString *pass_access_token_url;
@@ -31,6 +33,7 @@
 @property (nonatomic, retain) NSString *pass_consumer_key;
 @property (nonatomic, retain) NSString *pass_consumer_secret;
 @property (nonatomic, retain) NSString *pass_auth_url;
+@property (nonatomic, retain) NSString *pass_api_url;
 @property (nonatomic, retain) NSString *pass_request_token_url;
 @property (nonatomic, retain) NSString *pass_authenticate_url;
 @property (nonatomic, retain) NSString *pass_access_token_url;
